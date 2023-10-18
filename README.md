@@ -29,7 +29,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-## 📖 Morse-code
+## 📖 Oop-school-library
 
 In this project we created a OOP school library with the following features:
 - Add books to the library
@@ -107,7 +107,9 @@ Must-Install-Project-with-the-Following-Programmes:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Adding more functionality to the app.
+- Adding UI to the project
+- Adding Library
+- Adding Books
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
