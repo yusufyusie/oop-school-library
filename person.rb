@@ -1,8 +1,8 @@
 class Person
   @count = 0
 
-  def self.count
-    @count
+  class << self
+    attr_reader :count
   end
 
   attr_accessor :name, :age
