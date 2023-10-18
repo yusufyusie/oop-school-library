@@ -2,15 +2,15 @@ class Person
   @count = 0
 
   def self.count
-    @@count
+    @count
   end
 
   attr_accessor :name, :age
   attr_reader :id
 
-  def initialize(name: 'Unknown', age: nil, parent_permission: true)
-    @count += 1
-    @id = @@count
+  def initialize(age, name = 'Unknown', parent_permission: true)
+    self.class.increment_count
+    @id = self.class.count
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -24,5 +24,12 @@ class Person
 
   def of_age?
     @age.to_i >= 18
+  end
+
+  class << self
+    def increment_count
+      @count ||= 0
+      @count += 1
+    end
   end
 end
