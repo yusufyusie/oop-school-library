@@ -1,4 +1,4 @@
-# morse-code
+# Oop School Library
 
 <a name="readme-top"></a>
 
@@ -6,7 +6,7 @@
 
   <br/>
 
-  <h3><b>Morse-code</b></h3>
+  <h3><b>Oop School Library</b></h3>
 
 </div>
 
@@ -29,9 +29,12 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-## 📖 Morse-code
+## 📖 Oop-school-library <a name="about-project"></a>
 
-Is as project done to create a Postgres database from a diagram.
+In this project we created a OOP school library with the following features:
+- Add books to the library
+- Remove books from the library
+- List all books in the library
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,7 +46,9 @@ Is as project done to create a Postgres database from a diagram.
 
 ### Key Features <a name="key-features">
 
--Decode Morse messages
+-Add books to the library
+-Remove books from the library
+-List all books in the library
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,13 +73,13 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-- git clone https://github.com/dvcorreia1984/morse_code
+- git clone https://github.com/dvcorreia1984/oop-school-library.git
 
 Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/dvcorreia1984/morse_code
+  git clone https://github.com/dvcorreia1984/oop-school-library.git
 
 ```
 
@@ -99,21 +104,12 @@ Must-Install-Project-with-the-Following-Programmes:
 - Twitter: [@twitterhandle](https://twitter.com/dvcorreia1984)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/dvcorreia)
 
-👤 **Victor Correia**
-
-- GitHub: [@githubhandle](https://github.com/dvcorreia1984)
-- Twitter: [@twitterhandle](https://twitter.com/dvcorreia1984)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/dvcorreia)
-
-👤 **May Pyone**
-
-- GitHub: [@githubhandle](https://github.com/MayPyone)
-- Twitter: [@twitterhandle](https://twitter.com/maypyone015)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/may-pyone-9439961a3/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Adding more functionality to the app.
+- Adding UI to the project
+- Adding Library
+- Adding Books
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
