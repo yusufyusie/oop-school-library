@@ -104,11 +104,6 @@ Must-Install-Project-with-the-Following-Programmes:
 - Twitter: [@twitterhandle](https://twitter.com/dvcorreia1984)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/dvcorreia)
 
-👤 **Victor Correia**
-
-- GitHub: [@githubhandle](https://github.com/dvcorreia1984)
-- Twitter: [@twitterhandle](https://twitter.com/dvcorreia1984)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/dvcorreia)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
