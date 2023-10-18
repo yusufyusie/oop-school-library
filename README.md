@@ -29,7 +29,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-## 📖 Oop-school-library
+## 📖 Oop-school-library <a name="about-project"></a>
 
 In this project we created a OOP school library with the following features:
 - Add books to the library
