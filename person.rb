@@ -1,4 +1,4 @@
-class Person
+class Person < Nameable
   @count = 0
 
   class << self
