@@ -1,3 +1,5 @@
+require_relative 'nameable'
+
 class Person < Nameable
   @count = 0
 
@@ -18,6 +20,10 @@ class Person < Nameable
 
   def can_use_services?
     @parent_permission == true || of_age?
+  end
+
+  def correct_name
+    @name
   end
 
   private
