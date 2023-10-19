@@ -11,6 +11,7 @@ class Person < Nameable
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     self.class.increment_count
     @id = self.class.count
     @name = name
