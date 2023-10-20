@@ -5,11 +5,12 @@ def main
   people = []
   rentals = []
 
-  loop do
-    puts "\n" * 2
-    puts 'Welcome to the School Library App!'
-    puts "\n" * 2
+  puts "\n" * 2
+  puts 'Welcome to the School Library App!'
+  puts "\n" * 2
 
+
+  loop do
     puts 'Please choose an option by entering a number:'
     puts '1. List all books'
     puts '2. List all people'

@@ -9,7 +9,7 @@ def list_all_books(books)
   else
     puts 'List of all books:'
     books.each do |book|
-      puts "Title: #{book.title} Author: #{book.author}"
+      puts "Title: \"#{book.title}\", Author: #{book.author}"
     end
   end
 end
@@ -21,9 +21,7 @@ def list_all_people(people)
     puts 'List of all people:'
     people.each do |person|
       type = person.is_a?(Teacher) ? 'Teacher' : 'Student'
-      puts "Name: #{person.name}"
-      puts "Age: #{person.age}"
-      puts "Type: #{type}"
+      puts "[#{type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
 end
@@ -65,11 +63,12 @@ def create_person(people)
 end
 
 def add_book(books)
-  puts 'Please enter the title of the book: '
+  print 'Title: '
   title = gets.chomp
-  puts 'Please enter the author of the book: '
+  print 'Author: '
   author = gets.chomp
   books << Book.new(title, author)
+  puts "Book '#{title}' by #{author} added successfully."
 end
 
 def create_rental(books, people, rentals)
