@@ -47,11 +47,17 @@ def create_person(people)
 
     people << student
 
-    puts "Person #{student.name} created successfully\n\n"
-
-
+    puts "Person #{name}(#{age}) created successfully\n\n"
 
   elsif person_type == 2
+    print 'Specialization: '
+
+    specialization = gets.chomp.to_s
+
+    people << Teacher.new(age, name, specialization: specialization)
+
+    puts "Person #{name}(#{age}) with specialization in #{specialization} created successfully\n\n"
+
     people << Teacher.new(age, name)
   else
     puts 'Invalid type.'
