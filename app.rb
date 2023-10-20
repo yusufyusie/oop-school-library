@@ -2,6 +2,7 @@ require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'rental'
 
 def list_all_books(books)
   if books.empty?
@@ -70,38 +71,51 @@ def add_book(books)
 end
 
 def create_rental(books, people, rentals)
-  puts 'Create a rental'
-  puts 'Please enter the name of the person:'
-  person_name = gets.chomp
-  puts 'Please enter the title of the book:'
-  book_title = gets.chomp
-  puts 'Please enter the date the book was checked out (YYYY-MM-DD):'
+  puts 'Select a book from the following list by number:'
+  books.each_with_index do |book, index|
+    puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+  end
+
+  book_choice = gets.chomp.to_i
+
+  puts ''
+  puts 'Select a person from the following list by number (not id):'
+
+  people.each_with_index do |person, index|
+    type = person.is_a?(Teacher) ? 'Teacher' : 'Student'
+    puts "#{index}) [#{type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  end
+
+  person_choice = gets.chomp.to_i
+
+  print 'Date (YYYY/MM/DD): '
   date = gets.chomp
 
-  person = people.find { |p| p.name == person_name }
-  book = books.find { |b| b.title == book_title }
+  book = books[book_choice]
+  person = people[person_choice]
 
-  if person && book
-    rentals << Rental.new(date, book, person)
-    puts 'Rental created successfully.'
+  if book && person
+    rentals << Rental.new(date, book, person, person.class.to_s)
+    puts ''
+    puts 'Rental created successfully'
   else
-    puts 'Person or book not found. Rental creation failed.'
+    puts 'Invalid input, please try again'
   end
 end
 
 def list_rentals(rentals)
-  puts 'List all rentals for a given person'
-  puts 'Please enter the name of the person:'
-  person_name = gets.chomp
-  person_rentals = rentals.select { |r| r.person.name == person_name }
+  print 'ID of person: '
+  rental_id = gets.chomp.to_i
 
-  if person_rentals.empty?
-    puts "No rentals found for #{person_name}."
-  else
-    puts "Rentals for #{person_name}:"
-    person_rentals.each do |rental|
-      puts "Title: #{rental.book.title} Date: #{rental.date}"
-    end
+  person = rentals.select { |r| r.person.id == rental_id }
+
+  if person.empty?
+    puts "No person with ID #{rental_id} found."
+  end
+
+  puts "Rentals for #{person.first.person.name}:"
+  person.each do |rental|
+    puts "Date: #{rental.date}, Book Title: \"#{rental.book.title}\", Author: #{rental.book.author}"
   end
 end
 
