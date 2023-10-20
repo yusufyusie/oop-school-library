@@ -71,36 +71,47 @@ def add_book(books)
 end
 
 def create_rental(books, people, rentals)
+  book = select_book(books)
+  person = select_person(people)
+
+  if book && person
+    date = get_rental_date
+    create_and_add_rental(rentals, date, book, person)
+    puts 'Rental created successfully'
+  else
+    puts 'Invalid input, please try again'
+  end
+end
+
+def select_book(books)
   puts 'Select a book from the following list by number:'
   books.each_with_index do |book, index|
     puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
   end
 
   book_choice = gets.chomp.to_i
+  books[book_choice]
+end
 
-  puts ''
+def select_person(people)
   puts 'Select a person from the following list by number (not id):'
-
   people.each_with_index do |person, index|
     type = person.is_a?(Teacher) ? 'Teacher' : 'Student'
     puts "#{index}) [#{type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
   end
 
   person_choice = gets.chomp.to_i
+  people[person_choice]
+end
 
+def get_rental_date
   print 'Date (YYYY/MM/DD): '
-  date = gets.chomp
+  gets.chomp
+end
 
-  book = books[book_choice]
-  person = people[person_choice]
-
-  if book && person
-    rentals << Rental.new(date, book, person, person.class.to_s)
-    puts ''
-    puts 'Rental created successfully'
-  else
-    puts 'Invalid input, please try again'
-  end
+def create_and_add_rental(rentals, date, book, person)
+  rental = Rental.new(date, book, person, person.class.to_s)
+  rentals << rental
 end
 
 def list_rentals(rentals)

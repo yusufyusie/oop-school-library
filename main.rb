@@ -1,17 +1,9 @@
 require_relative 'app'
 
-def main
-  books = [] # Initialize arrays for books, people, and rentals
-  people = []
-  rentals = []
-
-  puts "\n" * 2
-  puts 'Welcome to the School Library App!'
-  puts "\n" * 2
-
+def main_menu
+  puts "\n\nWelcome to the School Library App!\n\n"
 
   loop do
-    puts ''
     puts 'Please choose an option by entering a number:'
     puts '1. List all books'
     puts '2. List all people'
@@ -25,26 +17,25 @@ def main
 
     case choice
     when 1
-      list_all_books(books)
+      list_all_books
     when 2
-      list_all_people(people)
+      list_all_people
     when 3
-      create_person(people)
+      create_person
     when 4
-      add_book(books)
+      add_book
     when 5
-      create_rental(books, people, rentals)
+      create_rental
     when 6
-      list_rentals(rentals)
+      list_rentals
     when 7
       exit_program
     else
       puts 'Invalid choice'
     end
 
-    # Option to quit the app
     break if choice == 7
   end
 end
 
-main
+main_menu
