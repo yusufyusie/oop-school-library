@@ -18,7 +18,6 @@ def list_all_people(people)
   if people.empty?
     puts 'No people available.'
   else
-    puts 'List of all people:'
     people.each do |person|
       type = person.is_a?(Teacher) ? 'Teacher' : 'Student'
       puts "[#{type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
@@ -56,7 +55,6 @@ def create_person(people)
 
     puts "Person #{name}(#{age}) with specialization in #{specialization} created successfully\n\n"
 
-    people << Teacher.new(age, name)
   else
     puts 'Invalid type.'
   end

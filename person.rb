@@ -13,7 +13,7 @@ class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
     self.class.increment_count
-    @id = self.class.count
+    @id = rand(1..100)
     @name = name
     @age = age
     @parent_permission = parent_permission
