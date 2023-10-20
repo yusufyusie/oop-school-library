@@ -29,26 +29,29 @@ def list_all_people(people)
 end
 
 def create_person(people)
-  puts 'Please enter the name of the person: '
-  name = gets.chomp
+  print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+  person_type = gets.chomp.to_i
 
-  age = nil
-  loop do
-    puts 'Please enter the age of the person (must be an integer): '
-    age = gets.chomp
-    break if age.match?(/^\d+$/)
+  print 'Age: '
+  age = gets.chomp.to_i
 
-    puts 'Age must be a valid integer.'
-  end
+  print 'Name: '
+  name = gets.chomp.to_s
 
-  age = age.to_i # Convert age to an integer
+  if person_type == 1
+    print 'Has parent permission? [Y/N]: '
 
-  puts "Please enter the type of person: For student type 's' or for teacher type 't':"
-  type = gets.chomp
+    parent_permission = gets.chomp.to_s.upcase == 'Y'
 
-  if type == 's'
-    people << Student.new(age, name)
-  elsif type == 't'
+    student = Student.new(age, name, parent_permission: parent_permission)
+
+    people << student
+
+    puts "Person #{student.name} created successfully\n\n"
+
+
+
+  elsif person_type == 2
     people << Teacher.new(age, name)
   else
     puts 'Invalid type.'

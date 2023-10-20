@@ -1,13 +1,16 @@
 require_relative 'app'
 
 def main
-  books = []      # Initialize arrays for books, people, and rentals
+  books = [] # Initialize arrays for books, people, and rentals
   people = []
   rentals = []
 
   loop do
-    puts 'Welcome to the Library App'
-    puts 'Menu'
+    puts "\n" * 2
+    puts 'Welcome to the School Library App!'
+    puts "\n" * 2
+
+    puts 'Please choose an option by entering a number:'
     puts '1. List all books'
     puts '2. List all people'
     puts '3. Create a person'
@@ -15,7 +18,6 @@ def main
     puts '5. Create a rental'
     puts '6. List all rentals for a given person'
     puts '7. Exit'
-    puts 'Please enter your choice: '
 
     choice = gets.chomp.to_i
 
