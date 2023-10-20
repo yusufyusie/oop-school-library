@@ -105,21 +105,21 @@ end
 
 def list_rentals(rentals)
   print 'ID of person: '
-  rental_id = gets.chomp.to_i
+  person_id = gets.chomp.to_i
 
-  person = rentals.select { |r| r.person.id == rental_id }
+  person_rentals = rentals.select { |r| r.person.id == person_id }
 
-  if person.empty?
-    puts "No person with ID #{rental_id} found."
-  end
-
-  puts "Rentals for #{person.first.person.name}:"
-  person.each do |rental|
-    puts "Date: #{rental.date}, Book Title: \"#{rental.book.title}\", Author: #{rental.book.author}"
+  if person_rentals.empty?
+    puts "No rentals found for person with ID #{person_id}"
+  else
+    puts 'Rentals:'
+    person_rentals.each do |rental|
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\", Author: #{rental.book.author}"
+    end
   end
 end
 
 def exit_program
-  puts 'Exiting program...'
+  puts 'Thank you for using this app!'
   exit
 end
