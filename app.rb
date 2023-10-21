@@ -77,7 +77,7 @@ def create_rental(books, people, rentals)
   person = select_person(people)
 
   if book && person
-    date = get_rental_date
+    date = rental_date
     create_and_add_rental(rentals, date, book, person)
     puts 'Rental created successfully'
   else
