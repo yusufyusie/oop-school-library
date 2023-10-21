@@ -1,5 +1,3 @@
-# menu.rb
-
 module Menu
   def self.display_welcome_message
     puts "\nWelcome to the School Library\n\n"

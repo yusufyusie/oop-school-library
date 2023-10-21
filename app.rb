@@ -12,6 +12,7 @@ def list_all_books(books)
     books.each do |book|
       puts "Title: \"#{book.title}\", Author: #{book.author}"
     end
+    puts "\n"
   end
 end
 
@@ -23,6 +24,7 @@ def list_all_people(people)
       type = person.is_a?(Teacher) ? 'Teacher' : 'Student'
       puts "[#{type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
+    puts "\n"
   end
 end
 
@@ -45,7 +47,7 @@ def create_person(people)
 
     people << student
 
-    puts "Person #{name}(#{age}) created successfully\n\n"
+    puts "Person created successfully\n\n"
 
   elsif person_type == 2
     print 'Specialization: '
@@ -54,7 +56,7 @@ def create_person(people)
 
     people << Teacher.new(age, name, specialization: specialization)
 
-    puts "Person #{name}(#{age}) with specialization in #{specialization} created successfully\n\n"
+    puts "Person created successfully\n\n"
 
   else
     puts 'Invalid type.'
@@ -67,7 +69,7 @@ def add_book(books)
   print 'Author: '
   author = gets.chomp
   books << Book.new(title, author)
-  puts "Book '#{title}' by #{author} added successfully."
+  puts 'Book created successfully.'
 end
 
 def create_rental(books, people, rentals)
@@ -127,6 +129,7 @@ def list_rentals(rentals)
     person_rentals.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\", Author: #{rental.book.author}"
     end
+    puts "\n"
   end
 end
 
