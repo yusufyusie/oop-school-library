@@ -106,7 +106,7 @@ def select_person(people)
   people[person_choice]
 end
 
-def get_rental_date
+def rental_date
   print 'Date (YYYY/MM/DD): '
   gets.chomp
 end
