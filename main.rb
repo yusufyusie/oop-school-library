@@ -8,6 +8,9 @@ class LibraryApp
     @rentals = rentals
   end
 
+  def start
+    Menu.display_welcome_message
+
     loop do
       choice = Menu.display_menu_and_get_choice
 
