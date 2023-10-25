@@ -1,3 +1,11 @@
+require_relative 'list_all_books'
+require_relative 'list_all_people'
+require_relative 'create_person'
+require_relative 'add_book'
+require_relative 'create_rental'
+require_relative 'list_rentals'
+require_relative 'exit_program'
+
 def handle_menu_option(choice, books, people, rentals)
   menu_actions = {
     1 => -> { list_all_books(books) },
