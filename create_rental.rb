@@ -1,4 +1,8 @@
+require_relative 'select_book'
+require_relative 'select_person'
+
 def create_rental(books, people, rentals)
+  puts "test create_rental"
   book = select_book(books)
   person = select_person(people)
 
