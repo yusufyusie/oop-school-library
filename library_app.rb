@@ -8,26 +8,19 @@ class LibraryApp
   end
 
   def save_data_to_json
-    existing_data = {}
-  
-    if File.exist?('library_data.json')
-      existing_data = JSON.parse(File.read('library_data.json'))
-    end
-  
     data = {
       'books' => @books,
       'people' => @people,
       'rentals' => @rentals
     }
   
-    combined_data = existing_data.merge(data)
-  
     File.open('library_data.json', 'w') do |file|
-      file.write(combined_data.to_json)
+      file.write(data.to_json)
     end
   
     puts 'Data saved to library_data.json.'
   end
+  
 
   # Add a method to load data from JSON files
   def load_data_from_json
