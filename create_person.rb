@@ -8,7 +8,8 @@ def create_person(people)
   print 'Name: '
   name = gets.chomp.to_s
 
-  if person_type == 1
+  case person_type
+  when 1
     print 'Has parent permission? [Y/N]: '
 
     parent_permission = gets.chomp.to_s.upcase == 'Y'
@@ -19,7 +20,7 @@ def create_person(people)
 
     puts "Person created successfully\n\n"
 
-  elsif person_type == 2
+  when 2
     print 'Specialization: '
 
     specialization = gets.chomp.to_s
