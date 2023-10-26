@@ -1,19 +1,25 @@
-# rental_spec.rb
-require 'rspec'
-require_relative 'rental'  # Assuming your Rental class is defined in a separate 'rental.rb' file
-require_relative 'book'    # Assuming your Book class is defined in a separate 'book.rb' file
-require_relative 'person'  # Assuming your Person class is defined in a separate 'person.rb' file
+require './spec_helper.rb'
 
-describe Rental do
-  let(:book) { Book.new('Sample Book', 'John Doe') }
-  let(:person) { Person.new('Alice') }
+describe Book do
+  before :each do
+    @book = Book.new 'Title', 'Author'
+  end
 
-  it 'should have a date, book, person, and type' do
-    rental = Rental.new('2023-10-26', book, person, 'Type')
+  describe '#new' do
+    it 'takes three parameters and returns a Book object' do
+      expect(@book).to be_an_instance_of Book
+    end
+  end
 
-    expect(rental.date).to eq('2023-10-26')
-    expect(rental.book).to eq(book)
-    expect(rental.person).to eq(person)
-    expect(rental.type).to eq('Person')  # Adjust this based on how the type is determined in your code
+  describe '#title' do
+    it 'returns the correct title' do
+      expect(@book.title).to eq 'Title'
+    end
+  end
+
+  describe '#author' do
+    it 'returns the correct author' do
+      expect(@book.author).to eq 'Author'
+    end
   end
 end
