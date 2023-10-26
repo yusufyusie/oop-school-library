@@ -4,7 +4,6 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
 
-
 def rental_date
   print 'Date (YYYY/MM/DD): '
   gets.chomp
