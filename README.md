@@ -12,22 +12,23 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-
-  - [🛠 Built With](#built-with)
-    - [Key Features](#key-features)
-  - [🛠 Tech Stack](#tech-stack)
-
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [Oop School Library](#oop-school-library)
+- [📗 Table of Contents](#-table-of-contents)
+  - [📖 Oop-school-library ](#-oop-school-library-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
 ## 📖 Oop-school-library <a name="about-project"></a>
 
@@ -104,6 +105,11 @@ Must-Install-Project-with-the-Following-Programmes:
 - Twitter: [@twitterhandle](https://twitter.com/dvcorreia1984)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/dvcorreia)
 
+👤 **Yesuf Fenta**
+
+- GitHub: [@yusufyusie](https://github.com/yusufyusie)
+- Twitter: [@yusufyusiee](https://twitter.com/yusufyusiee)
+- LinkedIn: [yusufyusie](https://linkedin.com/in/yusufyusie)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
