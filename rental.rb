@@ -11,4 +11,14 @@ class Rental
     book.rentals << self
     person.rentals << self
   end
+
+  def to_json
+    {
+      date: @date,
+      book: @book.title,
+      person: @person.name,
+      type: @type,
+    }
+  end
+
 end

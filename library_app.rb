@@ -12,7 +12,7 @@ class LibraryApp
     data = {
       'books' => serialize_data(@books),
       'people' => serialize_data(@people),
-      'rentals' => @rentals
+      'rentals' => serialize_data(@rentals)
     }
 
     puts "data: #{data}"
