@@ -39,10 +39,10 @@ class LibraryApp
   end
 
   def start
+    load_data_from_json
     Menu.display_welcome_message
 
     at_exit do
-      # Save data to JSON when the program exits
       save_data_to_json
     end
 
@@ -53,12 +53,6 @@ class LibraryApp
       when 1..7
         handle_menu_option(choice, @books, @people, @rentals)
         break if choice == 7
-      when 8
-        # Save data to JSON
-        save_data_to_json
-      when 9
-        # Load data from JSON
-        load_data_from_json
       else
         puts 'Invalid choice. Please select a valid option (1-9).'
       end
