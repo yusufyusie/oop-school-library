@@ -1,4 +1,5 @@
 require 'json'
+require_relative 'serialize_data'
 
 class LibraryApp
   def initialize(books, people, rentals)
@@ -9,34 +10,36 @@ class LibraryApp
 
   def save_data_to_json
     data = {
-      'books' => @books,
+      'books' => serialize_data(@books),
       'people' => @people,
       'rentals' => @rentals
     }
-  
+
+    puts "data: #{data}"
+
     File.open('library_data.json', 'w') do |file|
       file.write(data.to_json)
     end
-  
+
     puts 'Data saved to library_data.json.'
   end
-  
+
 
   # Add a method to load data from JSON files
   def load_data_from_json
     if File.exist?('library_data.json')
       data = File.read('library_data.json')
       parsed_data = JSON.parse(data)
-  
+
       @books = parsed_data['books']
       @people = parsed_data['people']
       @rentals = parsed_data['rentals']
-  
+
       puts 'Data loaded from library_data.json.'
     else
       puts 'No existing data file found.'
     end
-  end  
+  end
 
   def start
     Menu.display_welcome_message
