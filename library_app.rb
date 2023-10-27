@@ -21,23 +21,7 @@ class LibraryApp
     puts 'Data saved to library_data.json.'
   end
 
-  def load_data_from_json
-    if File.exist?('library_data.json')
-      data = File.read('library_data.json')
-      parsed_data = JSON.parse(data)
-
-      @books = parsed_data['books']
-      @people = parsed_data['people']
-      @rentals = parsed_data['rentals']
-
-      puts JSON.pretty_generate(parsed_data)
-    else
-      puts 'No existing data file found.'
-    end
-  end
-
   def start
-    load_data_from_json
     Menu.display_welcome_message
 
     at_exit do
