@@ -17,13 +17,10 @@ class LibraryApp
 
     puts "data: #{data}"
 
-    File.open('library_data.json', 'w') do |file|
-      file.write(data.to_json)
-    end
+    File.write('library_data.json', data.to_json)
 
     puts 'Data saved to library_data.json.'
   end
-
 
   # Add a method to load data from JSON files
   def load_data_from_json
@@ -52,13 +49,14 @@ class LibraryApp
     loop do
       choice = Menu.display_menu_and_get_choice
 
-      if (1..7).include?(choice)
+      case choice
+      when 1..7
         handle_menu_option(choice, @books, @people, @rentals)
         break if choice == 7
-      elsif choice == 8
+      when 8
         # Save data to JSON
         save_data_to_json
-      elsif choice == 9
+      when 9
         # Load data from JSON
         load_data_from_json
       else
