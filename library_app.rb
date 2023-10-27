@@ -17,8 +17,8 @@ class LibraryApp
 
     puts "data: #{data}"
 
-    File.write('library_data.json', data.to_json)
-
+    # File.write('library_data.json', data.to_json)
+    File.write('library_data.json', JSON.pretty_generate(data))
     puts 'Data saved to library_data.json.'
   end
 
