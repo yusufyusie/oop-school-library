@@ -30,7 +30,7 @@ class LibraryApp
       @people = parsed_data['people']
       @rentals = parsed_data['rentals']
 
-      puts 'Data loaded from library_data.json.'
+      puts JSON.pretty_generate(parsed_data)
     else
       puts 'No existing data file found.'
     end
