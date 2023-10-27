@@ -17,12 +17,10 @@ class LibraryApp
 
     puts "data: #{data}"
 
-    # File.write('library_data.json', data.to_json)
     File.write('library_data.json', JSON.pretty_generate(data))
     puts 'Data saved to library_data.json.'
   end
 
-  # Add a method to load data from JSON files
   def load_data_from_json
     if File.exist?('library_data.json')
       data = File.read('library_data.json')
