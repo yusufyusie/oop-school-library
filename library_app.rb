@@ -11,7 +11,7 @@ class LibraryApp
   def save_data_to_json
     data = {
       'books' => serialize_data(@books),
-      'people' => @people,
+      'people' => serialize_data(@people),
       'rentals' => @rentals
     }
 
