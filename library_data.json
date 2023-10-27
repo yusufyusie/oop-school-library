@@ -1,43 +1,39 @@
 {
   "books": [
     {
-      "title": "Asp",
-      "author": "maze"
+      "title": "ASP",
+      "author": "Maze"
     },
     {
-      "title": "angular",
-      "author": "dav"
+      "title": "Angular",
+      "author": "Dav"
     }
   ],
   "people": [
     {
-      "name": "yesuf",
+      "name": "Yesuf",
       "age": 12,
       "parent_permission": true,
-      "rentals": [
-
-      ]
+      "rentals": []
     },
     {
-      "name": "alemu",
+      "name": "Alemu",
       "age": 44,
       "parent_permission": false,
       "rentals": [
         {
-          "date": "2023/05",
-          "book": "angular",
-          "person": "alemu",
+          "date": "2023-05",
+          "book": "Angular",
+          "person": "Alemu",
           "type": "Student"
         }
       ]
     },
     {
-      "name": "kemer",
+      "name": "Kemer",
       "age": 45,
       "parent_permission": true,
-      "rentals": [
-
-      ]
+      "rentals": []
     },
     {
       "name": "Adem",
@@ -45,8 +41,8 @@
       "parent_permission": true,
       "rentals": [
         {
-          "date": "2020/03/12",
-          "book": "Asp",
+          "date": "2020-03-12",
+          "book": "ASP",
           "person": "Adem",
           "type": "Teacher"
         }
@@ -55,14 +51,14 @@
   ],
   "rentals": [
     {
-      "date": "2023/05",
-      "book": "angular",
-      "person": "alemu",
+      "date": "2023-05",
+      "book": "Angular",
+      "person": "Alemu",
       "type": "Student"
     },
     {
-      "date": "2020/03/12",
-      "book": "Asp",
+      "date": "2020-03-12",
+      "book": "ASP",
       "person": "Adem",
       "type": "Teacher"
     }
