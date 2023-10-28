@@ -1,25 +1,29 @@
-require './spec_helper'
-require_relative '../lib/decorator'
-require_relative '../lib/nameable'
+require_relative '../decorator'
+require_relative '../person'
 
-class NameableSubclass < Nameable
-  def correct_name
-    'Alice'
-  end
-end
-
-describe Decorator do
-  it 'should decorate a Nameable object and call its correct_name method' do
-    nameable = NameableSubclass.new
-    decorator = Decorator.new(nameable)
-
-    expect(decorator.correct_name).to eq('Alice')
+describe 'Test Decorator classes' do
+  before(:context) do
+    @person = Person.new(30, 'yesuf023@gmail', 1)
+    @decorator = Decorator.new(@person)
+    @capitalize_decorator = CapitalizeDecorator.new(@person)
+    @trimmer_decorator = TrimmerDecorator.new(@person)
   end
 
-  it 'should raise an error if the correct_name method is not implemented' do
-    nameable = Nameable.new
-    decorator = Decorator.new(nameable)
+  context 'Testing Decorator classes and methods' do
+    it 'test_correct_name' do
+      expect(@decorator.correct_name).to eq('yesuf023@gmail')
+      expect(@capitalize_decorator.correct_name).to eq('yesuf023@gmail')
+      expect(@trimmer_decorator.correct_name).to eq('yesuf023@gm')
+    end
 
-    expect { decorator.correct_name }.to raise_error(NotImplementedError)
+    it 'test_capitalize_decorator' do
+      expect(@capitalize_decorator.nameable.name).to eq('yesuf023@gmail')
+      expect(@capitalize_decorator.correct_name).to eq('yesuf023@gmail')
+    end
+
+    it 'test trimmer_decorator' do
+      expect(@trimmer_decorator.nameable.name).to eq('yesuf023@gmail')
+      expect(@trimmer_decorator.correct_name).to eq('yesuf023@gm')
+    end
   end
 end

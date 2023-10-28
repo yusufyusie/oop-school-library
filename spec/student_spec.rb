@@ -1,20 +1,17 @@
-require './spec_helper'
+require_relative '../student'
 
-describe Student do
-  let(:classroom) { double('Classroom') }
-
-  it 'should have attributes and methods related to a student' do
-    student = Student.new(15, 'Alice', parent_permission: true, classroom: classroom)
-
-    expect(student.name).to eq('Alice')
-    expect(student.age).to eq(15)
-    expect(student.parent_permission).to be(true)
-    expect(student.classroom).to eq(classroom)
+describe 'Test Student' do
+  before(:context) do
+    @student = Student.new('Ruby', 15, 'Yesuf', 1)
   end
 
-  it 'should be able to play hooky' do
-    student = Student.new(15, 'Alice')
+  context 'Testing student class methods' do
+    it 'Test classroom' do
+      expect(@student.classroom).to eq('Ruby')
+    end
 
-    expect(student.play_hooky).to eq('¯\(ツ)/¯')
+    it 'Test play_hooky' do
+      expect(@student.play_hooky).to eq('¯\\_(ツ)_/¯')
+    end
   end
 end

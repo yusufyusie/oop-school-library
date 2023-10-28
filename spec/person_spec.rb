@@ -1,25 +1,25 @@
-require './spec_helper'
+require_relative '../book'
+require_relative '../person'
+require_relative '../rental'
 
-describe Person do
-  it 'should have a name, age, and rentals' do
-    person = Person.new(25, 'Alice')
-
-    expect(person.name).to eq('Alice')
-    expect(person.age).to eq(25)
-    expect(person.rentals).to be_an(Array)
-    expect(person.rentals).to be_empty
+describe 'Test Person' do
+  before(:context) do
+    @person = Person.new(30, 'Yesuf', 1)
   end
 
-  it 'should have an ID between 1 and 100' do
-    person = Person.new(25, 'Alice')
+  context 'Testing Person class methods' do
+    it 'test_correct_name' do
+      expect(@person.correct_name).to eq('Yesuf')
+    end
 
-    expect(person.id).to be_between(1, 100)
-  end
+    it 'Test add_rental method' do
+      book = Book.new('Asp', 'Yesuf Fenta')
+      rental = @person.add_rental(book, '2023-07-07')
+      expect(@person.rentals[0]).to eq(rental)
+    end
 
-  it 'should increment the count of people' do
-    initial_count = Person.count
-    Person.new(30, 'Bob')
-
-    expect(Person.count).to eq(initial_count + 1)
+    it 'test can_use_services method' do
+      expect(@person.can_use_services?).to be true
+    end
   end
 end

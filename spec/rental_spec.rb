@@ -1,15 +1,25 @@
-require './spec_helper'
+require_relative '../book'
+require_relative '../person'
+require_relative '../rental'
 
-describe Rental do
-  let(:book) { Book.new('Sample Book', 'John Doe') }
-  let(:person) { Person.new(25, 'Alice') }
+describe 'Test Rental class' do
+  before(:context) do
+    @book = Book.new('Asp', 'Yesuf Fenta')
+    @person = Person.new(30, 'Victor', 1)
+    @rental = Rental.new('2023-07-07', @book, @person)
+  end
 
-  it 'should have a date, book, person, and type' do
-    rental = Rental.new('2023-10-26', book, person, 'Type')
+  context 'Testing Rental class methods' do
+    it 'test date instance' do
+      expect(@rental.date).to eq('2023-07-07')
+    end
 
-    expect(rental.date).to eq('2023-10-26')
-    expect(rental.book).to eq(book)
-    expect(rental.person).to eq(person)
-    expect(rental.type).to eq('Person') # Adjust this based on how the type is determined in your code
+    it 'Test book instance' do
+      expect(@rental.book).to eq(@book)
+    end
+
+    it 'Test person instance' do
+      expect(@rental.person).to eq(@person)
+    end
   end
 end

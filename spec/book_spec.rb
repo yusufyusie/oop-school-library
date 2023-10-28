@@ -1,25 +1,29 @@
-require './spec_helper'
+require_relative '../book'
+require_relative '../rental'
+require_relative '../person'
 
-describe Book do
-  before :each do
-    @book = Book.new 'Title', 'Author'
+describe 'Test Book class' do
+  before(:context) do
+    @book = Book.new('Asp', 'Yesuf Fenta')
+    @person = Person.new(30, 'Yesuf', 1)
   end
-
-  describe '#new' do
-    it 'takes three parameters and returns a Book object' do
-      expect(@book).to be_an_instance_of Book
+  context 'Testing Book class methods' do
+    it 'test title accessor' do
+      expect('Asp').to eq(@book.title)
     end
-  end
 
-  describe '#title' do
-    it 'returns the correct title' do
-      expect(@book.title).to eq 'Title'
+    it 'test author accessor' do
+      expect('Yesuf Fenta').to eq(@book.author)
     end
-  end
 
-  describe '#author' do
-    it 'returns the correct author' do
-      expect(@book.author).to eq 'Author'
+    it 'test rentals accessor' do
+      expect(@book.rentals).to eq([])
+    end
+
+    it 'test add_rental method' do
+      @book.add_rental(@person, '2023-07-06')
+      expect(@book.rentals[0].date).to eq('2023-07-06')
+      expect(@book.rentals[0].person.name).to eq('Yesuf')
     end
   end
 end
