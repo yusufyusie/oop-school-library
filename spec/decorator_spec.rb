@@ -1,5 +1,4 @@
-require_relative '../decorator'
-require_relative '../person'
+require_relative './spec_helper.rb'
 
 describe 'Test Decorator classes' do
   before(:context) do

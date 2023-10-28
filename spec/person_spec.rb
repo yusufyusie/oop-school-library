@@ -1,6 +1,4 @@
-require_relative '../book'
-require_relative '../person'
-require_relative '../rental'
+require_relative './spec_helper.rb'
 
 describe 'Test Person' do
   before(:context) do

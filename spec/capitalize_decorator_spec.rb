@@ -1,4 +1,4 @@
-require './spec_helper'
+require_relative './spec_helper.rb'
 
 class NameableSubclass < Nameable
   CORRECT_NAME = 'alice'.freeze

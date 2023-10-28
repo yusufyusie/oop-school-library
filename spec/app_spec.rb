@@ -1,4 +1,4 @@
-require_relative '../app'
+require_relative './spec_helper.rb'
 
 describe 'Test App class' do
   before(:context) do
