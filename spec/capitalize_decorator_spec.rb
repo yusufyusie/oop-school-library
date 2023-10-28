@@ -1,4 +1,4 @@
-require './spec_helper.rb'
+require './spec_helper'
 
 describe CapitalizeDecorator do
   it 'should capitalize the first letter of a Nameable object' do

@@ -1,4 +1,4 @@
-require './spec_helper.rb'
+require './spec_helper'
 
 describe Teacher do
   it 'should have attributes and methods related to a teacher' do

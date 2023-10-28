@@ -1,4 +1,4 @@
-require './spec_helper.rb'  # Adjust the file path as needed
+require './spec_helper' # Adjust the file path as needed
 
 describe Classroom do
   let(:classroom) { Classroom.new('Class A') }

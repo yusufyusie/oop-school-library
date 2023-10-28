@@ -1,4 +1,4 @@
-require './spec_helper.rb'
+require './spec_helper'
 
 describe Rental do
   let(:book) { Book.new('Sample Book', 'John Doe') }
@@ -10,6 +10,6 @@ describe Rental do
     expect(rental.date).to eq('2023-10-26')
     expect(rental.book).to eq(book)
     expect(rental.person).to eq(person)
-    expect(rental.type).to eq('Person')  # Adjust this based on how the type is determined in your code
+    expect(rental.type).to eq('Person') # Adjust this based on how the type is determined in your code
   end
 end

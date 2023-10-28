@@ -1,4 +1,4 @@
-require './spec_helper.rb'
+require './spec_helper'
 
 describe Person do
   it 'should have a name, age, and rentals' do
