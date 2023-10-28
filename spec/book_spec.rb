@@ -1,4 +1,4 @@
-require_relative './spec_helper.rb'
+require_relative '../book'
 
 describe 'Test Book class' do
   before(:context) do

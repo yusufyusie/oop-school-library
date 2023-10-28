@@ -1,4 +1,4 @@
-require_relative './spec_helper.rb'
+require_relative '../teacher'
 
 describe 'Test Teacher class' do
   before(:context) do
