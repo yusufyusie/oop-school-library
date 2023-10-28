@@ -1,4 +1,4 @@
-require_relative '../classroom.rb'
+require_relative '../classroom'
 
 describe Classroom do
   let(:label) { 'Ruby' }
