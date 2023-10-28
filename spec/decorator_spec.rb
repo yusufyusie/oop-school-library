@@ -1,12 +1,15 @@
 require './spec_helper'
+require_relative '../lib/decorator'
+require_relative '../lib/nameable'
+
+class NameableSubclass < Nameable
+  def correct_name
+    'Alice'
+  end
+end
 
 describe Decorator do
   it 'should decorate a Nameable object and call its correct_name method' do
-    class NameableSubclass < Nameable
-      def correct_name
-        'Alice'
-      end
-    end
     nameable = NameableSubclass.new
     decorator = Decorator.new(nameable)
 
