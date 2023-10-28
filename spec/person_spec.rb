@@ -18,7 +18,7 @@ describe Person do
 
   it 'should increment the count of people' do
     initial_count = Person.count
-    person = Person.new(30, 'Bob')
+    Person.new(30, 'Bob')
 
     expect(Person.count).to eq(initial_count + 1)
   end
