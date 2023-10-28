@@ -1,66 +1,11 @@
 {
   "books": [
-    {
-      "title": "ASP",
-      "author": "Maze"
-    },
-    {
-      "title": "Angular",
-      "author": "Dav"
-    }
+
   ],
   "people": [
-    {
-      "name": "Yesuf",
-      "age": 12,
-      "parent_permission": true,
-      "rentals": []
-    },
-    {
-      "name": "Alemu",
-      "age": 44,
-      "parent_permission": false,
-      "rentals": [
-        {
-          "date": "2023-05",
-          "book": "Angular",
-          "person": "Alemu",
-          "type": "Student"
-        }
-      ]
-    },
-    {
-      "name": "Kemer",
-      "age": 45,
-      "parent_permission": true,
-      "rentals": []
-    },
-    {
-      "name": "Adem",
-      "age": 32,
-      "parent_permission": true,
-      "rentals": [
-        {
-          "date": "2020-03-12",
-          "book": "ASP",
-          "person": "Adem",
-          "type": "Teacher"
-        }
-      ]
-    }
+
   ],
   "rentals": [
-    {
-      "date": "2023-05",
-      "book": "Angular",
-      "person": "Alemu",
-      "type": "Student"
-    },
-    {
-      "date": "2020-03-12",
-      "book": "ASP",
-      "person": "Adem",
-      "type": "Teacher"
-    }
+
   ]
 }

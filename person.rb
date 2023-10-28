@@ -1,27 +1,17 @@
 require_relative 'nameable'
+require_relative 'decorator'
 
 class Person < Nameable
-  @count = 0
-
-  class << self
-    attr_reader :count
-  end
-
-  attr_accessor :name, :age, :rentals
   attr_reader :id
+  attr_accessor :name, :age, :permission, :specialization, :rentals
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', permission = 1)
     super()
-    self.class.increment_count
-    @id = rand(1..100)
+    @id = rand(1..1000)
     @name = name
     @age = age
-    @parent_permission = parent_permission
+    @permission = permission
     @rentals = []
-  end
-
-  def can_use_services?
-    @parent_permission == true || of_age?
   end
 
   def correct_name
@@ -32,25 +22,15 @@ class Person < Nameable
     Rental.new(date, book, self)
   end
 
-  def to_json
-    {
-      name: @name,
-      age: @age,
-      parent_permission: @parent_permission,
-      rentals: @rentals.map(&:to_json),
-    }
+  # accessor methods
+  def can_use_services?
+    of_age? || @permission
   end
-
-  private
 
   def of_age?
-    @age.to_i >= 18
+    @age >= 18
   end
 
-  class << self
-    def increment_count
-      @count ||= 0
-      @count += 1
-    end
-  end
+  # make it private
+  private :of_age?
 end

@@ -1,24 +1,11 @@
 class Rental
-  attr_accessor :date
-  attr_reader :book, :person, :type
+  attr_accessor :date, :book, :person
 
-  def initialize(date, book, person, _type)
+  def initialize(date, book, person)
     @date = date
     @book = book
     @person = person
-    @type = person.class.to_s
-
-    book.rentals << self
     person.rentals << self
+    book.rentals << self
   end
-
-  def to_json
-    {
-      date: @date,
-      book: @book.title,
-      person: @person.name,
-      type: @type,
-    }
-  end
-
 end

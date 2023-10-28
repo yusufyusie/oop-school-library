@@ -1,35 +1,37 @@
-require_relative 'book'
-require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
+require_relative 'book'
+require_relative 'classroom'
 
-def rental_date
-  print 'Date (YYYY/MM/DD): '
-  gets.chomp
-end
-
-def create_and_add_rental(rentals, date, book, person)
-  rental = Rental.new(date, book, person, person.class.to_s)
-  rentals << rental
-end
-
-def list_rentals(rentals)
-  print 'ID of person: '
-  person_id = gets.chomp.to_i
-  person_rentals = rentals.select { |r| r.person.id == person_id }
-  if person_rentals.empty?
-    puts "No rentals found for person with ID #{person_id}"
-  else
-    puts 'Rentals:'
-    person_rentals.each do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\", Author: #{rental.book.author}"
-    end
-    puts "\n"
+class App
+  def initialize
+    @books = []
+    @persons = []
+    @rentals = []
   end
-end
 
-def exit_program
-  puts 'Thank you for using this app!'
-  exit
+  def addperson(person)
+    @persons << person
+  end
+
+  def getpersons
+    @persons
+  end
+
+  def addbook(book)
+    @books << book
+  end
+
+  def getbooks
+    @books
+  end
+
+  def addrental(rental)
+    @rentals << rental
+  end
+
+  def getrentals
+    @rentals
+  end
 end
